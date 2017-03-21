@@ -6,10 +6,10 @@
  *3.启动框架 
  */
 
-define("SEN",realpath('C:/code/statichtml/bjmovie01/haosen'));//框架所在目录
+define("SEN",realpath('D:\all\webphp\statichtml\bjmovie01\sen'));//框架所在目录
 define("CORE",SEN.'/core');//框架核心文件所在目录
 define("APP",SEN.'/app');//项目所处目录(控制器模型视图)
-
+define("MODULE",'app');//模块
 define("DEBUG",true);//是否开启调试模式
 if(DEBUG){
 	ini_set('display_error','On');

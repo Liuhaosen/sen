@@ -11,9 +11,9 @@ class Route{
 		 *3. 返回对应的控制器和方法
 		 **/
 		// P(substr($_SERVER['REQUEST_URI'],7));die;
-		if(isset($_SERVER['REQUEST_URI']) && substr($_SERVER['REQUEST_URI'],7) != '/'){
+		if(isset($_SERVER['REQUEST_URI']) && substr($_SERVER['REQUEST_URI'],4) != '/'){
 			//index/index
-			$path = substr($_SERVER['REQUEST_URI'],7);
+			$path = substr($_SERVER['REQUEST_URI'],4);
 			$path_arr = explode('/',trim($path,'/'));
 			// p($path_arr);die;
 			if(isset($path_arr[0])){

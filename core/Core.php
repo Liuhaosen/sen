@@ -6,7 +6,18 @@ class Core
 	static public function run(){
 
 		$route = new \core\lib\Route();
-		
+		$ctrlClass = $route->ctrl;
+        $action = $route->action;
+        $ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
+        $cltrlClass = '\\'.MODULE.'\ctrl\\'.$ctrlClass.'Ctrl';
+    
+        if(is_file($ctrlfile)){
+            include $ctrlfile;
+            $ctrl = new $cltrlClass();
+            $ctrl->$action();
+        }else{
+            throw new \Exception('找不到控制器'.$ctrlClass);
+        }
 	}
 
 	//自动加载类库
